@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cq4c0mwnpmn05"]
+
+[ext_resource type="Script" uid="uid://dl01mx1tm8rib" path="res://assets/scripts/InimigoGaivota.gd" id="1_6wvjr"]
+[ext_resource type="Texture2D" uid="uid://wh7u71it7mqq" path="res://assets/sprites/inimigo/gaivota.png" id="4_r2hgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m867n"]
+size = Vector2(19.604334, 14.190416)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13qdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+
+[node name="Gaivota" type="Area2D" unique_id=632631592]
+scale = Vector2(0.9691737, 0.98658127)
+script = ExtResource("1_6wvjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=174305283]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-1.2300094e-07, 0)
+scale = Vector2(0.080003284, 0.0800033)
+texture = ExtResource("4_r2hgo")
+
+[node name="ColissionGaivota" type="CollisionShape2D" parent="." unique_id=1076812166]
+light_mask = 2
+position = Vector2(2.5795157, -7.2498455e-07)
+scale = Vector2(0.99999964, 1)
+shape = SubResource("RectangleShape2D_m867n")
+
+[node name="VisaoGaivota" type="ShapeCast2D" parent="." unique_id=586293852]
+scale = Vector2(9.896605, 9.896605)
+shape = SubResource("CircleShape2D_13qdw")
+target_position = Vector2(0, 0)
+
+[node name="SensorParede" type="ShapeCast2D" parent="." unique_id=874778145]
+position = Vector2(4.127227, 0)
+scale = Vector2(1.2476342, 0.18911994)
+shape = SubResource("RectangleShape2D_xrivr")
+target_position = Vector2(2.3841858e-07, 0)
+collision_mask = 2
